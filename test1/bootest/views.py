@@ -22,6 +22,4 @@ def index(request):
     return render(request, 'bootest/nihao.html', context=context)
 
 def detail(request, book_id):
-
-
-    return render(request, 'bootest/book_info.html')
+    return render(request, 'bootest/book_info.html', context={'book_id': book_id})
