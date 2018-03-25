@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bt a{
+            text-decoration: none;
+            color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        {%for i in bookinfo%}
+        <div class="bt"><a href="{{i.id}}">{{i.btitle}}</a></div>
+        {%endfor%}
+    </div>
+
+</body>
+</html>
