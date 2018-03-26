@@ -23,3 +23,8 @@ def index(request):
 
 def detail(request, book_id):
     return render(request, 'bootest/book_info.html', context={'book_id': book_id})
+
+def show(request, book_id):
+    book = BookInfo.objects.get(pk=book_id)
+    herolist = book.heroinfo_set.all()
+    return render(request, 'bootest/hero_in_book.html', context={'list': herolist})
