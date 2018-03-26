@@ -6,7 +6,7 @@
 </head>
 <body>
     {%for hero in list%}
-    <li>{{hero.hname}} {%if hero.hgender == True%}男{%else%}女{%endif%}{{hero.hcontent}}</li>
+    <li>{{hero.hname}} {%if hero.hgender == True%}男{%else%}女{%endif%} {{hero.hcontent}}</li>
     {%endfor%}
 </body>
 </html>

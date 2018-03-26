@@ -4,25 +4,26 @@ from django.contrib import admin
 
 from .models import BookInfo, HeroInfo
 
+
 class HeroInfoInline(admin.TabularInline):
     model = HeroInfo
     extra = 2
     # 这个数字表示在添加BookInfo的时候会列出1个表单让填写HeroInfo
     # 继承StackedInline表示显示的添加表单形式是stack形式的，还有TabularInline
 
-#自定义model的管理页面
+
 class BookInfoAdmin(admin.ModelAdmin):
+    # 自定义model的管理页面
     list_display = ['id', 'btitle', 'bpub_date']
     list_filter = ['id', 'btitle', 'bpub_date']
     search_fields = ['btitle']
     fields = ['bpub_date', 'btitle']
     list_per_page = 10
-
     inlines = [HeroInfoInline]
+
 
 class HeroInfoAdmin(admin.ModelAdmin):
     list_display = ['id', 'hname', 'gender', 'book']
-
 
 
 admin.site.register(BookInfo, BookInfoAdmin)
