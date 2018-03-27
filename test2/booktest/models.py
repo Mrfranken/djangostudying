@@ -54,6 +54,9 @@ class BookInfo(models.Model):
     #     book.isDelete = False
     #     return book
 
+    def __str__(self):
+        return self.btitle
+
 
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=10)
@@ -61,3 +64,6 @@ class HeroInfo(models.Model):
     hcontent = models.CharField(max_length=1000)
     isDelete = models.BooleanField(default=False)
     book = models.ForeignKey(BookInfo)
+
+    def __str__(self):
+        return self.hname
