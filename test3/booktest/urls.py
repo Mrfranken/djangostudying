@@ -4,7 +4,12 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^(\d+)/$', views.detail, name='detail'),
-    url(r'^(?P<id1>\d+)/(?P<id2>\d+)/$', views.ganjianzhiparams, name='params')
+    url(r'^(?P<id1>\d+)/(?P<id2>\d+)/$', views.ganjianzhiparams, name='params'),
+    url(r'^getTest1/$', views.getTest1),
+    url(r'^getTest2/$', views.getTest2),
+    url(r'^getTest3/$', views.getTest3),
+    url(r'^posttest1/$', views.posttest1),
+    url(r'^posttest2/$', views.posttest2),
 ]
 
 # URL的反向解析
