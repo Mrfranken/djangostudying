@@ -14,7 +14,11 @@ urlpatterns = [
     url(r'^posttest2/$', views.posttest2),
     url(r'^cookietest/$', views.cookietest),
     url(r'^redirect1/$', views.redtest1),
-    url(r'^redirect2/$', views.redtest2)
+    url(r'^redirect2/$', views.redtest2),
+    url(r'^session1/$', views.session1),
+    url(r'^session2/$', views.session2),
+    url(r'^session2_handle/$', views.session2_handle),
+    url(r'^session3/$', views.session3)
 ]
 
 # URL的反向解析

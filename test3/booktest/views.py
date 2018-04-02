@@ -1,4 +1,5 @@
-from django.shortcuts import render
+#encoding: utf-8
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 
 
@@ -66,7 +67,7 @@ def cookietest(request):
     cookie = request.COOKIES
     if 't1' in cookie:
         resp.write(cookie['t1'])
-    resp.set_cookie('t1', '你好', 120)
+    resp.set_cookie('t1', 'thisiscookie', 120)
     return resp
 
 #redirect练习
@@ -75,3 +76,26 @@ def redtest1(request):
 
 def redtest2(request):
     return HttpResponse('转向来的页面')
+
+#通过用户登录练习session
+def session1(request):
+    try:
+        runame = request.session.get('uname', 'not login')
+        uname = runame
+    except:
+        pass
+    context = {'uname': uname}
+    return render(request, 'booktest/session1.html', context=context)
+
+def session2(request):
+    return render(request, "booktest/session2.html")
+
+def session3(request):
+    #删除session
+    del request.session['uname']
+    return redirect("/booktest/session1/")
+
+def session2_handle(request):
+    uname = request.POST['uname']
+    request.session['uname'] = uname
+    return redirect('/booktest/session1/')
