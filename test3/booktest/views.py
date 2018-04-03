@@ -79,11 +79,7 @@ def redtest2(request):
 
 #通过用户登录练习session
 def session1(request):
-    try:
-        runame = request.session.get('uname', 'not login')
-        uname = runame
-    except:
-        pass
+    uname = request.session.get('uname', 'not login')
     context = {'uname': uname}
     return render(request, 'booktest/session1.html', context=context)
 
@@ -98,4 +94,6 @@ def session3(request):
 def session2_handle(request):
     uname = request.POST['uname']
     request.session['uname'] = uname
+    # request.session.set_expiry(0) #设置为0表示关闭session就过去
+    # request.session.set_expiry(10) #如果value是一个整数，会话将在values秒没有活动后过期
     return redirect('/booktest/session1/')

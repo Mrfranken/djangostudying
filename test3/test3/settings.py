@@ -9,6 +9,28 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
+#                      _oo0oo_
+#                     o8888888o
+#                     88" . "88
+#                     (| -_- |)
+#                     0\  =  /0
+#                   ___/`---'\___
+#                 .' \\|     |// '.
+#                / \\|||  :  |||// \
+#               / _||||| -:- |||||- \
+#              |   | \\\  -  /// |   |
+#              | \_|  ''\---/''  |_/ |
+#              \  .-\__  '-'  ___/-. /
+#            ___'. .'  /--.--\  `. .'___
+#         ."" '<  `.___\_<|>_/___.' >' "".
+#        | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+#        \  \ `_.   \_ __\ /__ _/   .-` /  /
+#    =====`-.____`.___ \_____/___.-`___.-'=====
+#                      `=---='
+#
+#    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#               佛祖保佑         永无BUG
 
 import os
 
@@ -67,14 +89,26 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'test3.wsgi.application'
+# 使用Redis缓存session 时的配置
+# SESSION_ENGINE = 'redis_sessions.session'
+# SESSION_REDIS_HOST = 'localhost'
+# SESSION_REDIS_PORT = 6379
+# SESSION_REDIS_DB = 0
+# SESSION_REDIS_PASSWORD = ''
+# SESSION_REDIS_PREFIX = 'session'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'test2',
+        'USER': 'root',
+        'PASSWORD': 'wsjwin',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
