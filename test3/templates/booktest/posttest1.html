@@ -6,7 +6,7 @@
 </head>
 <body>
 <form action="/booktest/posttest2/" method="post">
-    {% csrf_token %}
+    {% csrf_token %} <!-- 注意这里在做post时需要加上，具体原因不明-->
     用户名：<input type="text" name="username"><br>
     密码： <input type="password" name="password"><br>
     性别:
@@ -23,8 +23,6 @@
     <label for="swim">游泳</label>
     <br>
     <input type="submit" value="提交">
-
-
 </form>
 </body>
 </html>
