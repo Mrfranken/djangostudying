@@ -5,6 +5,23 @@
     <title>index</title>
 </head>
 <body>
+{% comment %}
+https://blog.csdn.net/xyp84/article/details/7945094
+{% endcomment %}
 {{hero.show_name}}
+<br>
+============================================================
+<ul>
+{% for hero in hero_list %}
+    {% if forloop.counter|divisibleby:"2" %} {#使用过滤器#}
+        <li style="background-color: crimson; width: 70px">{{forloop.counter}}:{{hero.show_name}}</li>
+    {% else %}
+        <li style="color: blue">{{forloop.counter}}:{{hero.show_name}}</li>
+    {% endif %}
+{% empty %}
+    <li>啥也没找到</li>
+{% endfor %}
+</ul>
+
 </body>
 </html>

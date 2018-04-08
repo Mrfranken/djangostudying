@@ -5,7 +5,7 @@ from django.contrib import admin
 from .models import BookInfo, HeroInfo
 
 
-class HeroInfoInline(admin.TabularInline):
+class HeroInfoInline(admin.StackedInline):
     model = HeroInfo
     extra = 2
     # 这个数字表示在添加BookInfo的时候会列出1个表单让填写HeroInfo
@@ -24,10 +24,11 @@ class BookInfoAdmin(admin.ModelAdmin):
 
 class HeroInfoAdmin(admin.ModelAdmin):
     list_display = ['id', 'hname', 'gender', 'book']
+    search_fields = ['hname']
 
 
 admin.site.register(BookInfo, BookInfoAdmin)
-admin.site.register(HeroInfo)
+admin.site.register(HeroInfo, HeroInfoAdmin)
 
 # admin使用总结：
 # 1. 添加管理员账户
