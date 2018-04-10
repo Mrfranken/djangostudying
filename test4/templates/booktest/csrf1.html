@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>csrf1</title>
+</head>
+<body>
+<form action="/booktest/csrf2/" method="post">
+    {% csrf_token %}
+    用户名：<input type="text" name="username" value="wsj">
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

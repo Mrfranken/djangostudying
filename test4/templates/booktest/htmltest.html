@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {{ t1|escape }} {# 默认就有escape，表示转义 #}
+</div>
+<div>
+    {{ t1|safe }} {# safe表示不进行转义 #}
+</div>
+<div>
+    {% autoescape off %} {# autoescape用off或on控制是否转义 #}
+        {{ t1 }}
+    {% endautoescape %}
+</div>
+<div> {# 手动转义 #}
+    手动转义<br>
+    {{ t1|default:"&lt;h1&gt;123&lt;/h1&gt;" }}
+    {# 表示如果t1存在则输出t1的值，如果不存在则输出default后面的值 #}
+</div>
+<div>
+    {{"&amplt;h1&ampgt;123&amplt;/h1&ampgt;"}}
+</div>
+</body>
+</html>
