@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% extends 'booktest/base.html' %}
+
+{% block title %}
+    用户中心
+{% endblock %}
+
+{% block content1 %}
+
+    <table border="1">
+        <tr>
+            <td height="300px" width="200px">用户导航</td>
+            <td height="300px" width="200px">
+                {% block user_content %}
+                {% endblock user_content %}</td>
+        </tr>
+
+    </table>
+
+{% endblock content1 %}

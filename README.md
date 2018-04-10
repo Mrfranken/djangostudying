@@ -1,9 +1,8 @@
-
-chapter | status
----|---
-Django入门（代码test1） | Done
-Django模型（代码test2） | Doing 还有几个小问题（查询方式需要巩固）
-row 3 col 1 | row 3 col 2
+| chapter                 | content                                                      | status |
+| :---------------------- | ------------------------------------------------------------ | ------ |
+| Django入门（代码test1） |                                                              | Done   |
+| Django模型（代码test2） | 主要涉及模型类的定义（包括类型字段理解，列名的指定）、迁移、自定义表名，默认管理器的使用、自定义管理器 | Done   |
+| Django视图（代码test3） | 主要涉及利用视图函数处理post/get请求, cookie的练习， session登录的练习 | Done   |
 
 - ### 在线教程
 ```

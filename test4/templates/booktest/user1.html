@@ -1,0 +1,13 @@
+{% extends 'booktest/base_user.html' %}
+
+{% block title %}
+    {{ user1_title }} {# 注意传进来的context的键不能与block的标签名一致，不会出错但是会导致不能显示想要显示的内容 #}
+{% endblock %}
+
+{#{% block script_block %}#}
+{#    <script>alert('123')</script>#}
+{#{% endblock %}#}
+
+{% block user_content %}
+用户中心1
+{% endblock user_content %}
