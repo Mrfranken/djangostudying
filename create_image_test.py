@@ -26,15 +26,16 @@ def create_image(i):
     # 填充每个像素:
     for x in range(width):
         for y in range(height):
-            draw.point((x, y), fill=rndColor())
+            draw.point((x, y), (255, 106, 106))
     # 输出文字:
     for t in range(4):
         draw.text((60 * t + 10, 10), rndChar(), font=font, fill=rndColor2())
     # 模糊:
-    image = image.filter(ImageFilter.BLUR)
+    image = image.filter(ImageFilter.SMOOTH)
+    # ImageFilter.
     image.save(r'D:\code{}.jpg'.format(i), 'jpeg')
 
-for i in range(4):
+for i in range(2):
     create_image(i) #创造四张图片并保存
 
 

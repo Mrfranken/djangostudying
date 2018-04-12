@@ -10,5 +10,8 @@ urlpatterns = [
     url(r'^user2/$', views.user2, name='user2'),
     url(r'^htmltest/$', views.htmlzhuanyitest, name='htmltest'),
     url(r'^csrf1/$', views.csrf1, name='csrf1'),
-    url(r'^csrf2/$', views.csrf2, name='csrf2')
+    url(r'^csrf2/$', views.csrf2, name='csrf2'),
+    url(r'^verify_code/$', views.verify_code_test, name="verify_code"),
+    url(r'^verifytest1/$', views.verifytest1, name="verifytest1"),
+    url(r'^verifytest2/$', views.verifytest2, name="verifytest2"),
 ]

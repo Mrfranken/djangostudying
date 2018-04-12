@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>verifytest1</title>
+</head>
+<body>
+<form action="/booktest/verifytest2/" method="post">
+    {% csrf_token %}
+    <img src="/booktest/verify_code/" alt="this is a pic">
+    <input type="text" name="code" value="please input text">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
