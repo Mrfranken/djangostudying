@@ -73,7 +73,7 @@ def verify_code_test(request):
     # 创建画布
     image = Image.new('RGB', (width, height), bgColor)
     # 构造字体对象
-    font = ImageFont.truetype('C:\Windows\Fonts\SIMYOU.TTF', 24)
+    font = ImageFont.truetype('C:\Windows\Fonts\simfang.ttf', 24)
     # 创建画笔
     draw = ImageDraw.Draw(image)
     # 创建文本内容
@@ -100,6 +100,6 @@ def verifytest2(request):
     # return render(request, 'booktest/verifytest2.html')
     code = request.POST.get('code')
     session_code = request.session.get('code')
-    if code == session_code.lower():
+    if code.lower() == session_code.lower():
         # return redirect('/booktest/')
         return HttpResponse('您已登录成功')
