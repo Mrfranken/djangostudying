@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    'booktest.MyException.MyException',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -123,8 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/abc/' #'/static/'这里写成这样儿不写static，模板文件中与这里保持一致，可以防止攻击，因为实际压根没有这个文件夹存在
+STATIC_URL = '/abc/' #'/static1/'这里写成这样儿不写static，模板文件中与这里保持一致，可以防止攻击，因为实际压根没有这个文件夹存在
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    '/var/www/static'
+    os.path.join(BASE_DIR, 'static1'), #可以看到这里改成static1后在项目文件中把文件夹static也要改成static1可以生效
+    '/var/www/static1'
 ]
