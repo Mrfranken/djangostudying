@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/uploadhandle/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="pic1" value="选择你的文件">
+    <br>
+    <input type="submit" value="提交交交">
+</form>
+</body>
+</html>

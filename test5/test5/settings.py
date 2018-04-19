@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
-    'booktest.MyException.MyException',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,6 +125,10 @@ USE_TZ = True
 
 STATIC_URL = '/abc/' #'/static1/'这里写成这样儿不写static，模板文件中与这里保持一致，可以防止攻击，因为实际压根没有这个文件夹存在
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static1'), #可以看到这里改成static1后在项目文件中把文件夹static也要改成static1可以生效
-    '/var/www/static1'
+    os.path.join(BASE_DIR, 'static'), #可以看到这里改成static1后在项目文件中把文件夹static也要改成static1可以生效
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "static\media\\")
+
+if __name__ == "__main__":
+    print(MEDIA_ROOT)

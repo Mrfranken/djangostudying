@@ -12,7 +12,7 @@
     {{ t1|safe }} {# safe表示不进行转义 #}
 </div>
 <div>
-    {% autoescape off %} {# autoescape用off或on控制是否转义 #}
+    {% autoescape off %} {# autoescape用off或on控制是否转义 off表示不转义#}
         {{ t1 }}
     {% endautoescape %}
 </div>
