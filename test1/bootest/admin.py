@@ -19,6 +19,10 @@ class BookInfoAdmin(admin.ModelAdmin):
     search_fields = ['btitle']
     fields = ['bpub_date', 'btitle']
     list_per_page = 10
+
+    actions_on_top = True
+    # actions_on_bottom = True
+
     inlines = [HeroInfoInline]
 
 

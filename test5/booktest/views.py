@@ -22,4 +22,5 @@ def uploadhandle(request):
         with open(file_name, 'wb') as f:
             for content in pic_content.chunks():
                 f.write(content)
+                # 转义字符
         return HttpResponse('<img src="/abc/media/{}/">'.format(file_name))
