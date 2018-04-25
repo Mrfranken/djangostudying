@@ -67,7 +67,7 @@ def cookietest(request):
     cookie = request.COOKIES
     if 't1' in cookie:
         resp.write(cookie['t1'])
-    resp.set_cookie('t1', 'thisiscookie', 120) #t1=thisiscookie这个cookie将在120s后过期
+    resp.set_cookie('t1', 'thisiscookie', 30) #t1=thisiscookie这个cookie将在120s后过期
     return resp
 
 #redirect练习
