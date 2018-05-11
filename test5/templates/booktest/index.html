@@ -6,12 +6,15 @@
     <title>index</title>
 </head>
 <body>
-<img src="/abc/booktest/a2.jpg" alt="" width="100px" height="100px">
+<img src="/wsj/pic/booktest/a2.jpg" alt="" width="100px" height="100px">
 <br>
 <img src="{% static 'booktest/a2.jpg' %}" alt="">
 {#先找到逻辑的匹配规则，再找到物理地址#}
 <br>
 {#当然也不一定非要写成my_app/myexample.jpg的形式，可以有如下的形式#}
 <img src="{% static 'media/IMG_20140405_145619_mh1396700856126.jpg' %}" alt=""> {# 为什么引www/a2.jpg显示出来是booktest/a2.jpg？？？ #}
+<br>
+<img src="{% static 'media/downloadbb3pkg.png' %}" alt="">
+<br>
 </body>
 </html>

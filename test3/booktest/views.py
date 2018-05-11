@@ -1,6 +1,7 @@
 #encoding: utf-8
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
 
 
 # Create your views here.
@@ -86,14 +87,16 @@ def session1(request):
 def session2(request):
     return render(request, "booktest/session2.html")
 
+def session2_handle(request):
+    uname = request.POST['uname']
+    request.session['uname'] = uname
+    # request.session.set_expiry(0) #设置为0表示关闭session就过去
+    request.session.set_expiry(30) #如果value是一个整数，会话将在values秒没有活动后过期
+    return redirect('/booktest/session1/')
+
 def session3(request):
     #删除session
     del request.session['uname']
     return redirect("/booktest/session1/")
 
-def session2_handle(request):
-    uname = request.POST['uname']
-    request.session['uname'] = uname
-    # request.session.set_expiry(0) #设置为0表示关闭session就过去
-    # request.session.set_expiry(10) #如果value是一个整数，会话将在values秒没有活动后过期
-    return redirect('/booktest/session1/')
+
