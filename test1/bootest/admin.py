@@ -27,7 +27,7 @@ class BookInfoAdmin(admin.ModelAdmin):
 
 
 class HeroInfoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'hname', 'gender', 'book']
+    list_display = ['id', 'hname', 'hgender', 'book', 'content']
     search_fields = ['hname']
 
 
