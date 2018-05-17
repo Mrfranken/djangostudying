@@ -13,5 +13,5 @@ from .models import UserInfo
 # 第二种注册方式是使用模板类的装饰器装饰UserInfoAdmin这个类
 @admin.register(UserInfo)
 class UserInfoAdmin(admin.ModelAdmin):
-    list_display = ['id', '_uname', '_upwd']
+    list_display = ['id', '_uname', '_upwd', 'person_pic']
 

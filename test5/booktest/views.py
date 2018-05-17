@@ -25,3 +25,4 @@ def uploadhandle(request):
                 # 转义字符
         return HttpResponse('<img src="/wsj/media/{}">'.format(pic_content.name))
         # return HttpResponse(file_name)
+
