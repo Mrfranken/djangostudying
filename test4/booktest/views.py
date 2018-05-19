@@ -103,3 +103,4 @@ def verifytest2(request):
     if code.lower() == session_code.lower():
         # return redirect('/booktest/')
         return HttpResponse('您已登录成功')
+

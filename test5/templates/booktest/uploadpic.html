@@ -6,6 +6,7 @@
 </head>
 <body>
 <form action="/uploadhandle/" method="post" enctype="multipart/form-data">
+    <!--enctype="multipart/form-data" 必须加-->
     {% csrf_token %}
     <input type="file" name="pic1" value="选择你的文件">
     <br>

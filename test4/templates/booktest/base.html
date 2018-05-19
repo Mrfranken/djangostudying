@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title%}title{% endblock %}</title> {# 这个block在base_user.html中不继承也没关系，在user1.html中仍可以继承 #}
-    {% block script_block %} {% endblock %}
+    <title>
+        {% block title %}
+            title
+        {% endblock %}
+    </title> {# 这个block在base_user.html中不继承也没关系，在user1.html中仍可以继承 #}
+    {% block script_block %}
+
+    {% endblock %}
 </head>
 <body>
 <h1>logo</h1>
 <hr>
-{% block content1%}
+{% block content1 %}
     <h3> hahahahahah </h3>
 {% endblock %}
 <hr>
