@@ -6,7 +6,7 @@ from django.conf import settings
 # Create your views here.
 
 def index(request):
-    return render(request, 'booktest/index.html')
+    return render(request, 'booktest/index1.html')
 
 def execptiontest_func(request):
     a1 = int('abc')

@@ -3,7 +3,9 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^(\d+)/$', views.show, name='show'),
+    # 原本是r'^(\d+)/$'这个但是如果变成r'^3(\d+)/$'只有index.html中的<a href="1">就失效了
+    url(r'^3(\d+)/$', views.show, name='show'),
+    # 反向解析的意思就是说无论这个位置以后改成什么样子都能通过不修改模板中url来保证这个url的有效性
     url(r'^(?P<id1>\d+)/(?P<id2>\d+)/$', views.show_reverse, name='show_reverse'),
     url(r'^index2/$', views.index2, name='index2'),
     url(r'^user1/$', views.user1, name='user1'),
