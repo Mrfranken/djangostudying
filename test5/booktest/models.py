@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 class UserInfo(models.Model):
@@ -17,4 +18,15 @@ class UserInfo(models.Model):
     _uname.short_description = '名字'
     _upwd.short_description = '密码'
 
-# class PersonInfo(models.Model):
+
+class AreaInfo(models.Model):
+    title = models.CharField(max_length=20)
+    parea = models.ForeignKey('self', null=True, blank=True)
+    # 如果设置null为True，则对于空记录，django会用NULL去填充，默认情况下，django会用空字符串填充
+    # blank=True 表示该字段是否可以为空
+
+class HeroInfo(models.Model):
+    hname = models.CharField(max_length=10)
+    hgender = models.BooleanField(default=True)
+    hcontent = HTMLField()
+    isDelete = models.BooleanField(default=False)

@@ -1,12 +1,17 @@
 import os
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.conf import settings
+from .models import UserInfo, HeroInfo
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'booktest/index.html')
+    u = HeroInfo.objects.all()
+    context = {
+        'hcontent': u[0].hcontent
+    }
+    return render(request, 'booktest/index.html', context=context)
 
 def execptiontest_func(request):
     a1 = int('abc')
@@ -25,4 +30,13 @@ def uploadhandle(request):
                 # 转义字符
         return HttpResponse('<img src="/wsj/media/{}">'.format(pic_content.name))
         # return HttpResponse(file_name)
+
+def editor(request):
+    return render(request, 'booktest/editor.html')
+
+def show_editor_content(request):
+    hcontent = request.POST.get('hcontent', None)
+    u = UserInfo(uname='wsj', upwd=hcontent, isDelete=True)
+    u.save()
+    return HttpResponse(hcontent)
 

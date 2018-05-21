@@ -18,5 +18,11 @@
 <br>
 <img src="{% static 'media/中间件干预过程.jpg' %}" alt="">
 <br>
+<hr>
+<p>
+    {% autoescape off %}
+    {{ hcontent }}
+    {% endautoescape %}
+</p>
 </body>
 </html>
