@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     url(r'^herolist/$', views.herolist),
     url(r'^herolist/(\d+)/$', views.herolist),
+    url(r'^area/$', views.area),
 ]
 

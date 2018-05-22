@@ -35,8 +35,9 @@ def editor(request):
     return render(request, 'booktest/editor.html')
 
 def show_editor_content(request):
+    hname = request.POST.get('hname', None)
     hcontent = request.POST.get('hcontent', None)
-    u = UserInfo(uname='wsj', upwd=hcontent, isDelete=True)
+    u = UserInfo(uname=hname, upwd=hcontent, isDelete=True)
     u.save()
-    return HttpResponse(hcontent)
+    return render(request, 'booktest/editor_content.html', context={'hcontent': hcontent})
 

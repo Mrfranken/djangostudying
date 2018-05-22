@@ -24,3 +24,7 @@ def herolist(request):
         'page1': page,
         'current_page_num': a}
     return render(request, 'booktest/herolist.html', context=context)
+
+
+def area(request):
+    return render(request, 'booktest/area.html')

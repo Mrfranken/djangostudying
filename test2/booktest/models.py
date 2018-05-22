@@ -67,3 +67,8 @@ class HeroInfo(models.Model):
 
     def __str__(self):
         return self.hname
+
+
+class ProvinceModel(models.Model):
+    ptitle = models.CharField(max_length=20)
+    pparent = models.ForeignKey('self', null=True, blank=True)
