@@ -16,5 +16,7 @@ from .models import HeroInfo
 class UserInfoAdmin(admin.ModelAdmin):
     list_display = ['id', '_uname', '_upwd', 'person_pic']
 
-admin.site.register(HeroInfo)
+@admin.register(HeroInfo)
+class HeroInfoAdmin(admin.ModelAdmin):
+    list_display = ['id', 'hname', 'hgender']
 

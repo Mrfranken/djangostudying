@@ -30,3 +30,12 @@ class HeroInfo(models.Model):
     hgender = models.BooleanField(default=True)
     hcontent = HTMLField()
     isDelete = models.BooleanField(default=False)
+
+    def hgender(self):
+        if self.hgender:
+            return r'男'
+        else:
+            return r'女'
+
+    def __str__(self):
+        return self.hname.__repr__()

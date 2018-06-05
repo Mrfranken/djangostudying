@@ -1,0 +1,15 @@
+{% load cache %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cache_template</title>
+</head>
+<body>
+    {% cache 60 hello %}
+        <h1> hello cache_template </h1>
+{#        <h1> bye cache_template1 </h1>#}
+    {% endcache %}
+</body>
+</html>

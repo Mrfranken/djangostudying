@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'redis_cache',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'booktest',
     'tinymce',
+    'haystack',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -139,7 +141,25 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 400,
 }
 
+CACHES = {
+    "default": {
+        "BACKEND": "redis_cache.cache.RedisCache",
+        "LOCATION": "localhost:6379",
+        "TIMEOUT": 300,
+    }
+}
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+}
+
+#自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 if __name__ == "__main__":
     # print(MEDIA_ROOT)
     print(BASE_DIR)
+    print(os.path.dirname(__file__))

@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.conf import settings
 from .models import UserInfo, HeroInfo
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
 # Create your views here.
 
@@ -41,3 +43,20 @@ def show_editor_content(request):
     u.save()
     return render(request, 'booktest/editor_content.html', context={'hcontent': hcontent})
 
+
+@cache_page(60 * 15)
+def cache_view_test(request):
+    return HttpResponse('hello1')
+    # return HttpResponse('hello2')
+
+
+def cache_template_test(request):
+    return render(request, 'booktest/cache_template.html')
+
+
+#手动缓存一些信息
+def cache_data(request):
+    # cache.set('wsj', 'hello', 500)
+    print(cache.get('wsj'))
+    cache.clear()
+    return render(request, 'booktest/cache_template.html')
